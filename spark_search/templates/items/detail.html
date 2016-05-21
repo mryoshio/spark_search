@@ -1,0 +1,14 @@
+{% load application_extras %}
+
+{% if item %}
+<ul>
+  {% for a in attrs %}
+  <li>
+    {{ a }}
+    :
+    {{ item|attr:a }}
+  </li>
+  {% endfor %}
+  
+</ul>
+{% endif %}

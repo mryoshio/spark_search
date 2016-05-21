@@ -5,14 +5,26 @@ class Image(models.Model):
     medium = models.URLField()
     large = models.URLField()
 
+    def __str__(self):
+        return self.small
+
 class ProductGroup(models.Model):
     name = models.CharField(max_length=20);
+
+    def __str__(self):
+        return self.name
 
 class Language(models.Model):
     name = models.CharField(max_length=20);
 
+    def __str__(self):
+        return self.name
+
 class Publisher(models.Model):
     name = models.CharField(max_length=20);
+
+    def __str__(self):
+        return self.name
 
 class Item(models.Model):
     asin = models.CharField(max_length=15);
@@ -27,3 +39,6 @@ class Item(models.Model):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     image = models.ForeignKey(Image, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

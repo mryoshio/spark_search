@@ -1,0 +1,11 @@
+{% if items %}
+<ul>
+  {% for item in items %}
+  <li>
+    <a href="/spark_search/items/{{ item.id }}">
+      {{ item.title }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
