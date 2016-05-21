@@ -1,9 +1,9 @@
 from django.db import models
 
 class Image(models.Model):
-    small = models.CharField(max_length=100);
-    medium = models.CharField(max_length=100);
-    large = models.CharField(max_length=100);
+    small = models.URLField()
+    medium = models.URLField()
+    large = models.URLField()
 
 class ProductGroup(models.Model):
     name = models.CharField(max_length=20);
